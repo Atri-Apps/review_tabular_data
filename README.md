@@ -3,6 +3,8 @@
 This app displays tabular data and allows app users to leave comments 
 
 ## Demo
+[Demo](aasets/demo.mp4)
+
 https://atri-apps.github.io/review_tabular_data/
 
 ## How to use this app?
