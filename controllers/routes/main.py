@@ -27,8 +27,8 @@ def init_state(at: Atri):
     #comment 1
     at.Table6.custom.cols = [
         {'field':'id', 'headerName':'id'},
-        {'field':'Name', 'headerName':'Name'},
-        {'field':'Author', 'headerName':'Author'},
+        {'field':'Name', 'headerName':'Name', 'width':400},
+        {'field':'Author', 'headerName':'Author', 'width':200},
         {'field':'Rating', 'headerName':'Rating'},
         {'field':'Reviews', 'headerName':'Reviews'},
         {'field':'Price', 'headerName':'Price'},
@@ -40,8 +40,8 @@ def init_state(at: Atri):
     #comment 2
     at.Table7.custom.cols = [
         {'field':'id', 'headerName':'id'},
-        {'field':'Name', 'headerName':'Name'},
-        {'field':'Author', 'headerName':'Author'},
+        {'field':'Name', 'headerName':'Name', 'width':400},
+        {'field':'Author', 'headerName':'Author', 'width':400},
         {'field':'Rating', 'headerName':'Rating'},
         {'field':'Reviews', 'headerName':'Reviews'},
         {'field':'Price', 'headerName':'Price'},
