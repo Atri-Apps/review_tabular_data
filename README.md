@@ -15,7 +15,7 @@ https://atri-apps.github.io/review_tabular_data/
 ```shell
 git clone https://github.com/Atri-Apps/review_tabular_data.git
 
-cd portfolio-template
+cd review_tabular_data
 
 pipenv install
 ```
