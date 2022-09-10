@@ -10,45 +10,20 @@ def init_state(at: Atri):
     Changing values in this dictionary will modify the intial state of the app.
     """
     df = pd.read_csv('most_popular_books.csv')
-    # df = pd.DataFrame(
-    #     {'id': [1, 2], 'col2': [0.5, 0.75]}, index=['a', 'b'])
-    at.Table3.custom.cols = [
-        {'field':'id', 'headerName':'id'},
-        {'field':'Name', 'headerName':'Name', 'width':400},
-        {'field':'Author', 'headerName':'Author', 'width':200},
-        {'field':'Rating', 'headerName':'Rating'},
-        {'field':'Reviews', 'headerName':'Reviews'},
-        {'field':'Price', 'headerName':'Price'},
-        {'field':'Year', 'headerName':'Year'},
-        {'field':'Genre', 'headerName':'Genre'},
-    ]
-    at.Table3.custom.rows = df.to_dict(orient='records')
+
+    at.Table3.custom.rows, at.Table3.custom.cols = write_table(df, id_col='index',
+                                                            col_styles={'Name': {'width':400}, 
+                                                            'Author': {'width':200}})
 
     #comment 1
-    at.Table6.custom.cols = [
-        {'field':'id', 'headerName':'id'},
-        {'field':'Name', 'headerName':'Name', 'width':400},
-        {'field':'Author', 'headerName':'Author', 'width':200},
-        {'field':'Rating', 'headerName':'Rating'},
-        {'field':'Reviews', 'headerName':'Reviews'},
-        {'field':'Price', 'headerName':'Price'},
-        {'field':'Year', 'headerName':'Year'},
-        {'field':'Genre', 'headerName':'Genre'},
-    ]
-    at.Table6.custom.rows = df.head(1).to_dict(orient='records')
-
+    at.Table6.custom.rows, at.Table6.custom.cols = write_table(df.head(1), id_col='index',
+                                                            col_styles={'Name': {'width':400}, 
+                                                            'Author': {'width':200}})
+    
     #comment 2
-    at.Table7.custom.cols = [
-        {'field':'id', 'headerName':'id'},
-        {'field':'Name', 'headerName':'Name', 'width':400},
-        {'field':'Author', 'headerName':'Author', 'width':400},
-        {'field':'Rating', 'headerName':'Rating'},
-        {'field':'Reviews', 'headerName':'Reviews'},
-        {'field':'Price', 'headerName':'Price'},
-        {'field':'Year', 'headerName':'Year'},
-        {'field':'Genre', 'headerName':'Genre'},
-    ]
-    at.Table7.custom.rows = df.tail(2).to_dict(orient='records')
+    at.Table7.custom.rows, at.Table7.custom.cols = write_table(df.tail(2), id_col='index',
+                                                            col_styles={'Name': {'width':400}, 
+                                                            'Author': {'width':200}})
 
     pass
 
@@ -64,8 +39,3 @@ def handle_event(at: Atri, req: Request, res: Response):
     performs some action such as click button.
     """
     pass
-
-def write_table(df, cols):
-    at.Table.custom.rows = df.to_dict(orient='records')
-
-    
